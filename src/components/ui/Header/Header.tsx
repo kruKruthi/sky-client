@@ -16,12 +16,12 @@ const Header: React.FC = () => {
           <div className="hidden xl:flex ml-2">
             <NavBar openItem={openItem} onItemChange={setOpenItem} />
           </div>
-          {/* <div className="flex items-center xl:ml-auto">
+          <div className="flex items-center xl:ml-auto">
             <UtilityNav
               openItem={openItem}
               onItemChange={setOpenItem}  
             />
-          </div> */}
+          </div>
         </div>
       </div>
       {!!openItem && (
