@@ -1,0 +1,30 @@
+@import "tailwindcss";
+@tailwind utilities;
+
+body {
+  @apply bg-gray-50 text-gray-900;
+}
+
+.sky-app::before {
+  content: "";
+  top: 0;
+  left: 0;
+  display: block;
+  position: fixed;
+  width: 100vw;
+  height: 3px;
+  z-index: 100;
+  background-image: linear-gradient(to right, #ff8c00 5%, #f80032 25%, #ff00a0 45%, #8c28ff 65%, #0023ff 82%, #19a0ff 96%)
+}
+
+.sky-app::after {
+  content: "";
+  bottom: 0;
+  left: 0;
+  display: block;
+  position: fixed;
+  width: 100vw;
+  height: 3px;
+  z-index: 100;
+  background-image: linear-gradient(to right, #ff8c00 5%, #f80032 25%, #ff00a0 45%, #8c28ff 65%, #0023ff 82%, #19a0ff 96%);
+}
