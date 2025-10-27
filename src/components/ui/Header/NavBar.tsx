@@ -1,6 +1,11 @@
 import React from "react";
 import type { NavItem as NavItemType } from "./types";
 import NavItem from "./NavItem";
+// import { HeaderMenu } from "../../../graphql/queries";
+// import { HeaderMenu } from "../../../graphql/queries";
+// removed unused HeaderMenu import - NavItemType is used for the component
+import { useHeaderMenus } from "../../../graphql/hooks";
+
  
 export const navItems: NavItemType[] = [
   {
@@ -70,15 +75,22 @@ interface Props {
   onItemChange: (item: NavItemType | null) => void;
 }
 
-const NavBar: React.FC <Props>= ({ openItem, onItemChange }) => {
+const NavBar: React.FC<Props> = ({ openItem, onItemChange }) => {
+  // Call hook inside the component (hooks must not be used at top-level).
+  const { headerMenus } = useHeaderMenus();
+
   const handleOpenItemChange = (item: NavItemType | null) => {
-    onItemChange(item)
+    onItemChange(item);
   };
+
+  // Use headerMenus when available, otherwise fall back to the static navItems.
+  // Cast to the expected NavItemType[] to satisfy TypeScript (headerMenus may come from GraphQL types).
+  const menus: NavItemType[] = (headerMenus as unknown as NavItemType[]) ?? navItems;
 
   return (
     <nav className="hidden lg:flex space-x-3 items-center">
-      {navItems.map((item) => (
-        <NavItem key={item.label} item={item} openItem={openItem} onItemChange={handleOpenItemChange} />
+      {menus.map((data) => (
+        <NavItem key={data.label} item={data} openItem={openItem} onItemChange={handleOpenItemChange} />
       ))}
     </nav>
   );
