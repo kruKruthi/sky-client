@@ -1,9 +1,6 @@
 import React from "react";
 import type { NavItem as NavItemType } from "./types";
 import NavItem from "./NavItem";
-// import { HeaderMenu } from "../../../graphql/queries";
-// import { HeaderMenu } from "../../../graphql/queries";
-// removed unused HeaderMenu import - NavItemType is used for the component
 import { useHeaderMenus } from "../../../graphql/hooks";
 
  
@@ -11,7 +8,7 @@ export const navItems: NavItemType[] = [
   {
     label: "Watch",
     href: "/watch",
-    submenu: [
+    submenus: [
       { label: "Cinema", href: "/watch/cinema" },
       { label: 'Sports', href: "/watch/sports" },
       { label: 'Kids', href: "/watch/kids" },
@@ -22,7 +19,7 @@ export const navItems: NavItemType[] = [
   { 
     label: "TV", 
     href: "/tv", 
-    submenu: [
+    submenus: [
       { label: "Stream", href: "/tv/stream" },
       { label: 'Glass', href: "/tv/glass" },
       { label: 'SkyQ', href: "/tv/skyq" },
@@ -32,7 +29,7 @@ export const navItems: NavItemType[] = [
   {
     label: "Glass",
     href: "/glass",
-    submenu: [
+    submenus: [
       { label: "Glass Gen 2", href: "/glass/gen-2" },
       { label: "Glass Air", href: "/glass/air" },
       { label: "New", href: "/glass/new" },
@@ -43,7 +40,7 @@ export const navItems: NavItemType[] = [
   {
     label: "Broadband",
     href: "/broadband",
-    submenu: [
+    submenus: [
       {  label: "Broadband", href: "/broadband" },
       { label: "TV & Broadband", href: "/tv/tv-and-broadband" },
       { label: "Full Fibre Broadband", href: "/broadband/full-fibre" },
@@ -54,7 +51,7 @@ export const navItems: NavItemType[] = [
   {
     label: "Mobile",
     href: "/mobile",
-    submenu: [
+    submenus: [
       { label: "Sky Mobile", href: "/mobile/sky-mobile" },
       { label: "Phones", href: "/mobile/phones" },
       { label: "SIM", href: "/mobile/sim" },
@@ -86,7 +83,7 @@ const NavBar: React.FC<Props> = ({ openItem, onItemChange }) => {
   // Use headerMenus when available, otherwise fall back to the static navItems.
   // Cast to the expected NavItemType[] to satisfy TypeScript (headerMenus may come from GraphQL types).
   const menus: NavItemType[] = (headerMenus as unknown as NavItemType[]) ?? navItems;
-
+  console.log("NavBar menus:", menus);
   return (
     <nav className="hidden lg:flex space-x-3 items-center">
       {menus.map((data) => (

@@ -26,7 +26,7 @@ const Header: React.FC = () => {
       </div>
       {!!openItem && (
         <SubMenuPanel 
-          menu={openItem.submenu ?? []} 
+          menu={openItem.submenus ?? []} 
           containerClassName={openItem?.submenuContainerClassName} 
           content={openItem?.subMenuContent}
         />

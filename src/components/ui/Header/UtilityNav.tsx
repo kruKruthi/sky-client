@@ -12,7 +12,7 @@ const utilityNavItems: NavItem[] = [
   {
     label: "Help",
     submenuContainerClassName: 'justify-end',
-    submenu: [
+    submenus: [
       { label: "Help", href: "/help" },
       { label: "My Account", href: "/help/my-account" },
       { label: "Broadband", href: "/help/broadband" },
@@ -61,7 +61,7 @@ const UtilityNav: React.FC<Props> = ({ openItem, onItemChange }) => {
                 label: utilityNavItems[0].label,
                 href: utilityNavItems[0].href,
                 submenuContainerClassName: utilityNavItems[0].submenuContainerClassName,
-                submenu: utilityNavItems[0].submenu
+                submenus: utilityNavItems[0].submenus
               })}/>
           }
         </button>

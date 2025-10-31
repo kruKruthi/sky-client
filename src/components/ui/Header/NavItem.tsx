@@ -15,7 +15,7 @@ const NavItem: React.FC<Props> = ({ item, openItem, onItemChange }) => {
         className="flex items-center px-3 py-2 text-sm font-medium text-gray-800 cursor-pointer"
       >
         <span>{item.label}</span>
-        {item.submenu && (
+        {item?.submenus !== null ? (
           <>
             {openItem?.label === item.label ? (
               <ChevronUp
@@ -31,7 +31,7 @@ const NavItem: React.FC<Props> = ({ item, openItem, onItemChange }) => {
               />
             )}
           </>
-        )}
+        ) : null}
       </button>
     </div>
   );

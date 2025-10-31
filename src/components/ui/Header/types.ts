@@ -2,7 +2,7 @@ export interface NavItem {
   label: string;
   href?: string;
   submenuContainerClassName?: string
-  submenu?: NavItem[];
+  submenus?: NavItem[];
   subMenuContent?: React.ReactNode;
   onClose?: any;
 }
