@@ -1,6 +1,6 @@
 import ProductCard from "./ProductCard";
-// import { useProducts } from "../../../graphql/hooks";
-// import type { Product } from "../../../graphql/queries";
+import { useProducts } from "../../../graphql/hooks";
+import type { Product } from "../../../graphql/queries";
 import NotificationBanner from "../Notification/Notification";
 import { useContext, useEffect } from "react";
 import { NotificationContext } from "../../../context/NotificationContext";
@@ -8,7 +8,7 @@ import HeroBanner from "../../HeroBanner/HeroBanner";
 
 const ProductList = () => {
 
-  // const { loading, error, products } = useProducts();
+  const { loading, error, products } = useProducts();
   const notificationContext = useContext(NotificationContext);
 
   useEffect(() => {
@@ -17,13 +17,13 @@ const ProductList = () => {
     });
   }, []);
 
-  // if (loading) {
-  //   return <h1>Loading products...</h1>;
-  // }
+  if (loading) {
+    return <h1>Loading products...</h1>;
+  }
 
-  // if (error) {
-  //   return <h1>Error loading products...</h1>;
-  // }
+  if (error) {
+    return <h1>Error loading products...</h1>;
+  }
 
   return (
     <>
@@ -34,11 +34,11 @@ const ProductList = () => {
         />
       )}
       <HeroBanner/>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:mx-6 max-w-5x p-6">
-        {/* {products.map((product:Product) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:mx-6 max-w-5x p-9 items-center justify-start md:px-16 lg:px-16">
+        {products.map((product:Product) => (
           <ProductCard key={product.id} {...product} />
-        ))} */}
-        <ProductCard id={""} title={""} description={""} images={[]}/>
+        ))}
+        {/* <ProductCard id={""} title={""} description={""} images={[]}/> */}
       </div>
     </>
     

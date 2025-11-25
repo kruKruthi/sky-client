@@ -3,7 +3,7 @@ export default function HeroBanner() {
     <section className='relative w-full overflow-hidden flex flex-col items-center'>
       {/* Desktop / Tablet Image */}
       <img
-        src='https://static.skyassets.com/contentstack/assets/blt143e20b03d72047e/blt09164ff7e8a4f177/68bee81f5f14883f7508bb34/2025_Q3_September_ETV_BAU_PHP_Hero_Desktop_Watchnow_688058.png?format=webp&imageManager=true&impolicy=resize&width=1600'
+        src='https://static.skyassets.com/contentstack/assets/blt143e20b03d72047e/blt801ce9adcc533b2f/690390c3531ab003ab280844/2025_Q4_October_Black_Friday_PHP_Hero_ETV&FF500_Desktop_v1.png?format=webp&imageManager=true&impolicy=resize&width=1600'
         alt='Sky Banner Desktop'
         className='hidden md:block w-full h-[500px] md:h-[600px] lg:h-[650px] object-contain'
       />
@@ -18,19 +18,18 @@ export default function HeroBanner() {
       {/* Text Content */}
       <div className='absolute inset-0 flex items-center justify-start px-6 md:px-10 lg:px-16'>
         {/* Desktop/Tablet Text */}
-        <div className='hidden md:block max-w-xl space-y-4 md:space-y-6 text-white' data-testid='desktop-content'>
-          <p className='text-sm md:text-base font-light'>Our lowest price is back</p>
-
-          <h1 className='text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight'>
-            Sky Essential TV &amp; Sky Full Fibre
-          </h1>
-
-          <p className='text-gray-100 text-sm md:text-base'>
+        <div className='hidden md:block max-w-xl space-x-4 md:space-x-6 text-white' data-testid='desktop-content'>
+          <img
+            src='https://static.skyassets.com/contentstack/assets/blt143e20b03d72047e/bltc2aabb6cfd1b30fa/690b0ef4f78cb4acb25e41f7/2025_Q4_November_Black_Friday_PHP_Hero_Logo_ETV&FF500_v1.png'
+            alt='Sky Banner Desktop'
+            className='hidden md:block w-full pl-50 h-[100px] md:h-[200px] lg:h-[250px] object-contain'
+          />
+          <p className='text-black text-sm md:text-base pl-60'>
             Sky, Netflix and discovery+, supercharged with <br className='hidden md:block' />
-            <span className='font-medium text-white'>300Mbps Full Fibre Broadband</span> for just £35/month
+            <span className='font-medium text-black'>500Mbps Full Fibre Broadband</span> for just £35/month. Our lowest ever price.
           </p>
 
-          <div className='flex flex-wrap gap-4 pt-4'>
+          <div className='flex flex-wrap gap-4 pl-60 pt-4'>
             <button className='bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-medium transition'>
               Buy now
             </button>

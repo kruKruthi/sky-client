@@ -15,9 +15,6 @@ export interface Product {
   title: string;
   description: string;
   images: { url: string; altText: string }[];
-  createdAt: string;
-  updatedAt: string;
-  reviews: Review[];
 }
 
 export interface HeaderMenu {
@@ -46,7 +43,6 @@ const PRODUCT_DETAIL_FRAGMENT = gql`
       url
       altText
     }
-    createdAt
   }
 `;
 
